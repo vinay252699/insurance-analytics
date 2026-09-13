@@ -156,27 +156,27 @@ The processing logic uses Spark DataFrame transformations rather than collecting
 
 5. Repository Structure
 insurance-analytics/
-│
 ├── README.md
 ├── .gitignore
-│
 ├── config/
 │   └── business_rules.json
-│
 ├── data/
 │   └── samples/
 │       ├── claims.parquet
 │       ├── customers.parquet
 │       └── products.parquet
-│
 ├── notebooks/
 │   └── 01_data_profiling.ipynb
-│
+├── results/
+│   ├── q1_health_life_portfolio.csv
+│   └── q2_property_casualty_portfolio.csv
 └── src/
     ├── analytics.py
     ├── data_quality.py
     ├── pipeline.py
     └── transformations.py
+
+
 6. Source Data
 
 The supplied sample data contains:
@@ -355,37 +355,47 @@ property_casualty_portfolio	Q2 Property & Casualty analysis
 
 The marts are written as Parquet datasets and can be consumed by downstream BI tools such as Power BI, Looker, or other analytical applications.
 
-13. Key Results
-Overall Claims
-Total claims: 1,000,000
-Total claim amount: approximately 25.25 billion
-Average claim amount: approximately 25,251
-Approved claims: 333,912
-Rejected claims: 333,057
-Pending claims: 333,031
-Approval rate: approximately 33.39%
-Health & Life
+## 13. Key Results
 
-The Q1 Health & Life mart contains 120 analytical rows, covering combinations of:
+The pipeline successfully generated the following assessment outputs:
 
-Customer tier
-Country
-Product
+### Q1 – Health & Life Portfolio
 
-The output includes claim volume, financial metrics, status counts, and approval rates.
+Output:
+`results/q1_health_life_portfolio.csv`
 
-Property & Casualty
+The output provides:
+- Customer tier
+- Country
+- Product
+- Claim count
+- Total and average claim amount
+- Approved, rejected and pending claims
+- Approval rate
 
-The Q2 Property & Casualty mart contains 24 analytical rows, covering:
+The generated Q1 mart contains 120 analytical rows.
 
-Country
-Risk category
-Product
-Product version
+### Q2 – Property & Casualty Portfolio
 
-The output includes claim metrics and product-version-specific premium/commission attributes.
+Output:
+`results/q2_property_casualty_portfolio.csv`
 
-14. Premium and Commission Assumption
+The output provides:
+- Country
+- Risk category
+- Product
+- Product version
+- Claim count
+- Total and average claim amount
+- Approved and rejected claims
+- Average premium
+- Commission rate
+- Estimated premium
+- Estimated commission
+
+The generated Q2 mart contains 24 analytical rows.
+
+These CSV files are direct exports of the Spark-generated analytical marts and are included in the repository as the assessment deliverables.14. Premium and Commission Assumption
 
 The supplied data contains product-level:
 
