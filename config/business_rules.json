@@ -1,0 +1,24 @@
+{
+  "portfolios": {
+    "health_life": [
+      "HEALTH",
+      "LIFE"
+    ],
+    "property_casualty": [
+      "AUTO",
+      "HOME"
+    ]
+  },
+  "claim_status": {
+    "approved": "APPROVED",
+    "rejected": "REJECTED",
+    "pending": "PENDING"
+  },
+  "customer_tiers": [
+    "BRONZE",
+    "SILVER",
+    "GOLD",
+    "PLATINUM"
+  ],
+  "unknown_customer_tier": "UNKNOWN"
+}

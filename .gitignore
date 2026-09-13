@@ -1,7 +1,18 @@
-data/
-output/
+# Python
 __pycache__/
-.ipynb_checkpoints/
-.venv/
+*.py[cod]
 .pytest_cache/
-*.pyc
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Generated analytics output
+output/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
