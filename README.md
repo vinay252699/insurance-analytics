@@ -1,5 +1,11 @@
 \# Insurance Analytics – PySpark Data Engineering Assessment
 
+## Live Dashboard
+
+📊 **[Open Insurance Analytics Dashboard](https://insurance-analytics-dashboard.vercel.app)**
+
+The dashboard presents the PySpark-generated Health & Life and Property & Casualty analytical results.
+
 
 
 \## 1. Overview
